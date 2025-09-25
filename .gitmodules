@@ -1,0 +1,3 @@
+[submodule "collectiq"]
+	path = collectiq
+	url = https://github.com/ediril/collectiq.git

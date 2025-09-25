@@ -11,6 +11,7 @@
 <html lang="en">
 <head>
     <?php include __DIR__ . '/partials/head.php'; ?>
+    <link rel="stylesheet" href="/collectiq/components/waitlist/assets/waitlist.css">
     <title><?= isset($title) ? htmlspecialchars($title) : 'Vodomodo' ?></title>
     <?php if (!empty($page_styles)) { echo $page_styles; } ?>
 </head>
@@ -22,6 +23,7 @@
     <?php include __DIR__ . '/partials/footer.php'; ?>
     <?php include __DIR__ . '/partials/scripts.php'; ?>
     <?php if (!empty($page_scripts)) { echo $page_scripts; } ?>
+    <script src="/collectiq/components/waitlist/assets/waitlist.js"></script>
 </body>
 </html>
 

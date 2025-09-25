@@ -1,4 +1,6 @@
 <?php
+require_once 'collectiq/components/waitlist/WaitlistComponent.php';
+
 $title = 'Vodomodo';
 $navbar_class = 'overlay';
 $page_styles = <<<HTML
@@ -23,6 +25,13 @@ $page_styles = <<<HTML
     .waitlist-overlay { position: relative; }
     .waitlist .form-control { border: 0; box-shadow: 0 6px 18px rgba(0,0,0,.18); }
     .waitlist .btn { box-shadow: 0 8px 22px rgba(0,0,0,.22); }
+    /* Waitlist inner container card */
+    #waitlist-container { background: rgb(239, 230, 255); border-radius: 16px; box-shadow: 0 10px 28px rgba(0,0,0,.20); }
+    #waitlist-container { color: #2b1747; }
+    #waitlist-container .hero-title,
+    #waitlist-container .hero-sub { color: #2b1747; text-shadow: none; }
+    .collectiq-input { color: #333; }
+    .collectiq-input::placeholder { color: rgba(0, 0, 0, 0.6); }
 </style>
 HTML;
 
@@ -111,20 +120,12 @@ ob_start();
 
 <section id="waitlist" class="waitlist py-5">
     <div class="waitlist-overlay py-4">
-        <div class="container py-4">
+        <div id="waitlist-container" class="container py-4">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
                     <h2 class="fw-bold hero-title">Join the waitlist</h2>
                     <p class="lead hero-sub mb-4">We’ll send you updates & notify you when invites open.</p>
-                    <form class="row g-2 justify-content-center" method="post" action="#">
-                        <div class="col-12 col-md-7">
-                            <label for="waitlistEmail" class="visually-hidden">Email address</label>
-                            <input type="email" id="waitlistEmail" name="email" class="form-control form-control-lg" placeholder="you@example.com" required>
-                        </div>
-                        <div class="col-12 col-md-auto d-grid">
-                            <button type="submit" class="btn btn-warning btn-lg px-4">Join Waitlist</button>
-                        </div>
-                    </form>
+                    <?php $waitlist = new WaitlistComponent(); echo $waitlist->renderForm('Enter your email address'); ?>
                     <small class="d-block mt-2" style="opacity:.9">We will never spam you. Unsubscribe anytime.</small>
                 </div>
             </div>
