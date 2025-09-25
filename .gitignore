@@ -1,0 +1,11 @@
+_**_/
+node_modules/
+uploads/
+static/app/
+
+
+.DS_Store
+*.db*
+*.log
+*.mp4
+ftp_config.yaml
