@@ -23,7 +23,6 @@
     <?php include __DIR__ . '/partials/footer.php'; ?>
     <?php include __DIR__ . '/partials/scripts.php'; ?>
     <?php if (!empty($page_scripts)) { echo $page_scripts; } ?>
-    <script src="/collectiq/components/waitlist/assets/waitlist.js"></script>
 </body>
 </html>
 
